@@ -25,19 +25,9 @@ fn main() {
 
 fn add() {
 
-    let mut a = String::new();
-    println!("Enter first number: ");
-    std::io::stdin()
-        .read_line(&mut a)
-        .expect("Failed to parse input");
-    let a = a.trim().parse::<i32>().expect("Failed to parse input");
+    let a = read_number("Enter first number: ");
+    let b = read_number("Enter second number: ");
 
-    let mut b = String::new();
-    println!("Enter second number: ");
-    std::io::stdin()
-        .read_line(&mut b)
-        .expect("Failed to parse input");
-    let b = b.trim().parse::<i32>().expect("Failed to parse input");
 
     let sum = a + b;
     println!("The sum is: {}", sum);
@@ -45,19 +35,8 @@ fn add() {
 
 fn subtract() {
 
-    let mut a = String::new();
-    println!("Enter first number: ");
-    std::io::stdin()
-        .read_line(&mut a)
-        .expect("Failed to parse input");
-    let a = a.trim().parse::<i32>().expect("Failed to parse input");
-
-    let mut b = String::new();
-    println!("Enter second number: ");
-    std::io::stdin()
-        .read_line(&mut b)
-        .expect("Failed to parse input");
-    let b = b.trim().parse::<i32>().expect("Failed to parse input");
+    let a = read_number("Enter first number: ");
+    let b = read_number("Enter second number: ");
 
     let difference = a - b;
     println!("The difference is: {}", difference);
@@ -65,19 +44,8 @@ fn subtract() {
 
 fn multiply() {
 
-    let mut a = String::new();
-    println!("Enter first number: ");
-    std::io::stdin()
-        .read_line(&mut a)
-        .expect("Failed to parse input");
-    let a = a.trim().parse::<i32>().expect("Failed to parse input");
-
-    let mut b = String::new();
-    println!("Enter second number: ");
-    std::io::stdin()
-        .read_line(&mut b)
-        .expect("Failed to parse input");
-    let b = b.trim().parse::<i32>().expect("Failed to parse input");
+    let a = read_number("Enter first number: ");
+    let b = read_number("Enter second number: ");
 
     let product = a * b;
     println!("The product is: {}", product);
@@ -85,19 +53,8 @@ fn multiply() {
 
 fn divide() {
 
-    let mut a = String::new();
-    println!("Enter first number: ");
-    std::io::stdin()
-        .read_line(&mut a)
-        .expect("Failed to parse input");
-    let a = a.trim().parse::<i32>().expect("Failed to parse input");
-
-    let mut b = String::new();
-    println!("Enter second number: ");
-    std::io::stdin()
-        .read_line(&mut b)
-        .expect("Failed to parse input");
-    let b = b.trim().parse::<i32>().expect("Failed to parse input");
+    let a = read_number("Enter first number: ");
+    let b = read_number("Enter second number: ");
 
     if b != 0 {
         let quotient = a / b;
@@ -105,4 +62,11 @@ fn divide() {
     } else {
         println!("Cannot divide by zero");
     }
+}
+
+fn read_number(prompt: &str) -> i32 {
+    let mut input = String::new();
+    println!("{}", prompt);
+    std::io::stdin().read_line(&mut input).expect("Failed to read input");
+    input.trim().parse::<i32>().expect("Failed to parse number")
 }
