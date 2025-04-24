@@ -1,25 +1,26 @@
 fn main() {
-    let mut function = String::new();
-    println!("Enter the function name (add, subtract, multiply, divide or exit): ");
-    std::io::stdin()
-        .read_line(&mut function)
-        .expect("Failed to read line");
-    let function = function.trim();
+    println!("Welcome to the calculator!");
 
-    if function == "add" {
-        add();
-    } else if function == "subtract" {
-        subtract();
-    } else if function == "multiply" {
-        multiply();
-    } else if function == "divide" {
-        divide();
-    } else if function == "exit" {
-        println!("Exiting...");
-        return;
-    }
-    else {
-        println!("Function not found");
+    loop {
+        println!("Please select a function (add, subtract, multiply, divide or exit): ");
+        let mut function = String::new();
+        std::io::stdin()
+            .read_line(&mut function)
+            .expect("Failed to read line");
+        let function = function.trim();
+
+        if function == "exit" {
+            println!("Exiting...");
+            break;
+        }
+
+        match function {
+            "add" => add(),
+            "subtract" => subtract(),
+            "multiply" => multiply(),
+            "divide" => divide(),
+            _ => println!("Function not found"),
+        }
     }
 }
 
@@ -27,7 +28,6 @@ fn add() {
 
     let a = read_number("Enter first number: ");
     let b = read_number("Enter second number: ");
-
 
     let sum = a + b;
     println!("The sum is: {}", sum);
