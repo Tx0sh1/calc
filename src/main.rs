@@ -33,7 +33,7 @@ fn add() {
     let a = a.trim().parse::<i32>().expect("Failed to parse input");
 
     let mut b = String::new();
-    println!("Enter first number: ");
+    println!("Enter second number: ");
     std::io::stdin()
         .read_line(&mut b)
         .expect("Failed to parse input");
@@ -53,7 +53,7 @@ fn subtract() {
     let a = a.trim().parse::<i32>().expect("Failed to parse input");
 
     let mut b = String::new();
-    println!("Enter first number: ");
+    println!("Enter second number: ");
     std::io::stdin()
         .read_line(&mut b)
         .expect("Failed to parse input");
@@ -73,7 +73,7 @@ fn multiply() {
     let a = a.trim().parse::<i32>().expect("Failed to parse input");
 
     let mut b = String::new();
-    println!("Enter first number: ");
+    println!("Enter second number: ");
     std::io::stdin()
         .read_line(&mut b)
         .expect("Failed to parse input");
@@ -93,7 +93,7 @@ fn divide() {
     let a = a.trim().parse::<i32>().expect("Failed to parse input");
 
     let mut b = String::new();
-    println!("Enter first number: ");
+    println!("Enter second number: ");
     std::io::stdin()
         .read_line(&mut b)
         .expect("Failed to parse input");
